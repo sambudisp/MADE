@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.sambudisp.made.appbarXnavdrawerXbotnav.Main3Activity
+import com.sambudisp.made.backgroundThread.MainBgThreadActivity
 import com.sambudisp.made.customView.CustomViewActivity
 import com.sambudisp.made.localization.Main5Activity
 import com.sambudisp.made.navigation.Main2Activity
@@ -36,7 +37,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun goCodeLab() {
-        startActivity(Intent(this, Main5Activity::class.java))
+        startActivity(Intent(this, MainBgThreadActivity::class.java))
         finish()
     }
 
