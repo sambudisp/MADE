@@ -1,0 +1,59 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">MADE</string>
+    <string name="length" translatable="false">Panjang</string>
+    <string name="width" translatable="false">Lebar</string>
+    <string name="height" translatable="false">Tinggi</string>
+    <string name="calculate" translatable="false">Kalkulasi</string>
+    <string name="result" translatable="false">Hasil</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+
+    <string name="content_text" translatable="false">Google officially announced its much-anticipated Pixel phones; the Pixel and Pixel XL,
+        on October 4. We attended Google’s London UK event, mirroring the main one taking place in San Francisco, US,
+        where the firm unwrapped the new Android 7.1 Nougat devices which will apparently usurp Google’s long-standing
+        Nexus series.
+    </string>
+    <string name="content_specs_display" translatable="false">5.0 inches\n
+        FHD AMOLED at 441ppi\n
+        2.5D Corning® Gorilla® Glass 4
+    </string>
+    <string name="content_specs_size" translatable="false">5.6 x 2.7 x 0.2 ~ 0.3 inches 143.8 x 69.5 x 7.3 ~ 8.5 mm</string>
+    <string name="content_specs_battery" translatable="false">2,770 mAh battery\n
+        Standby time (LTE): up to 19 days\n
+        Talk time (3g/WCDMA): up to 26 hours\n
+        Internet use time (Wi-Fi): up to 13 hours\n
+        Internet use time (LTE): up to 13 hours\n
+        Video playback: up to 13 hours\n
+        Audio playback (via headset): up to 110 hours\n
+        Fast charging: up to 7 hours of use from only 15 minutes of charging
+    </string>
+    <string name="total_photos" translatable="false">6 Photos</string>
+    <string name="dummy_price" translatable="false">$735</string>
+    <string name="dummy_stock" translatable="false">Stock hanya 5 buah</string>
+    <string name="spesification" translatable="false">Spesifikasi</string>
+    <string name="display" translatable="false">Display</string>
+    <string name="size" translatable="false">Size</string>
+    <string name="battery" translatable="false">Battery</string>
+    <string name="seller" translatable="false">Penjual</string>
+    <string name="dummy_seller_name" translatable="false">Sambudi Sugya Putra</string>
+    <string name="buy" translatable="false">Beli</string>
+    <string name="search_hint" translatable="false">Masukan Kata Kunci</string>
+    <string name="tab_text_1" translatable="false">Tab1</string>
+    <string name="tab_text_2" translatable="false">Tab2</string>
+    <string name="tab_text_3" translatable="false">Tab3</string>
+
+
+    <!-- Localization -->
+    <string name="hello_world">Hello World %1$s, you have %2$d pokes from %3$s</string>
+    <string name="good_morning">Good Morning</string>
+    <plurals name="numberOfSongsAvailable">
+        <item quantity="one">%d song found.</item>
+        <item quantity="other">%d songs found.</item>
+    </plurals>
+    <string name="app_homeurl">
+        Visit us at <xliff:g id="application_homepage">https://dicoding.com</xliff:g>
+    </string>
+    <string name="change_language_settings">Change Language Settings</string>
+
+</resources>
