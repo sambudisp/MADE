@@ -15,8 +15,10 @@ import com.sambudisp.made.backgroundThread.MainBgThreadActivity
 import com.sambudisp.made.customView.CustomViewActivity
 import com.sambudisp.made.localization.Main5Activity
 import com.sambudisp.made.navigation.Main2Activity
+import com.sambudisp.made.navigationTaskAndBackstack.NavigationTaskBackstackActivity
 import com.sambudisp.made.service.ServiceActivity
 import com.sambudisp.made.tabLayout.Main4Activity
+import com.sambudisp.made.workManager.WorkManagerActivity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -41,7 +43,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun goCodeLab() {
-        startActivity(Intent(this, JobSchedulerActivity::class.java))
+        startActivity(Intent(this, NavigationTaskBackstackActivity::class.java))
         finish()
     }
 

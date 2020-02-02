@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sambudisp.made">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -14,14 +14,28 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".JobScheduler.JobSchedulerActivity"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
 
-        <service android:name=".JobScheduler.GetCurrentWeatherJobService"
+        <activity
+            android:name=".navigationTaskAndBackstack.DetailNTBackstackActivity"
+            android:parentActivityName=".navigationTaskAndBackstack.NavigationTaskBackstackActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".navigationTaskAndBackstack.NavigationTaskBackstackActivity" />
+        </activity>
+        <activity
+            android:name=".navigationTaskAndBackstack.NavigationTaskBackstackActivity"
+            android:launchMode="singleTop"/>
+
+        <activity android:name=".workManager.WorkManagerActivity" />
+        <activity android:name=".JobScheduler.JobSchedulerActivity" />
+
+        <service
+            android:name=".JobScheduler.GetCurrentWeatherJobService"
             android:enabled="true"
             android:exported="true"
-            android:permission="android.permission.BIND_JOB_SERVICE"/>
+            android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <receiver
             android:name=".AlarmManager.AlarmReceiver"
