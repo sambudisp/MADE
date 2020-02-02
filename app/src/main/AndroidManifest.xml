@@ -2,15 +2,67 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sambudisp.made">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".backgroundThread.MainBgThreadActivity"></activity>
-        <activity android:name=".localization.Main5Activity"></activity>
+        <activity android:name=".JobScheduler.JobSchedulerActivity"></activity>
+
+        <service android:name=".JobScheduler.GetCurrentWeatherJobService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
+
+        <receiver
+            android:name=".AlarmManager.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".AlarmManager.MainAlarmManagerActivity" />
+
+        <service
+            android:name="com.DownloadService"
+            android:exported="false" />
+
+        <receiver
+            android:name="com.SmsMyReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".BroadcastReceiver.SmsReceiverActivity" />
+        <activity android:name=".BroadcastReceiver.BroadcastReceiverActivity" />
+
+        <service
+            android:name="com.MyBoundService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name="com.MyIntentService"
+            android:exported="false" />
+        <service
+            android:name="com.MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".service.ServiceActivity"
+            android:theme="@style/SmsReceiverTheme" />
+        <activity android:name=".backgroundThread.MainBgThreadActivity" />
+        <activity android:name=".localization.Main5Activity" />
         <activity android:name=".tabLayout.Main4Activity" />
         <activity android:name=".appbarXnavdrawerXbotnav.MenuActivity" />
         <activity android:name=".appbarXnavdrawerXbotnav.Main3Activity" />

@@ -7,11 +7,15 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.sambudisp.made.AlarmManager.MainAlarmManagerActivity
+import com.sambudisp.made.BroadcastReceiver.BroadcastReceiverActivity
+import com.sambudisp.made.JobScheduler.JobSchedulerActivity
 import com.sambudisp.made.appbarXnavdrawerXbotnav.Main3Activity
 import com.sambudisp.made.backgroundThread.MainBgThreadActivity
 import com.sambudisp.made.customView.CustomViewActivity
 import com.sambudisp.made.localization.Main5Activity
 import com.sambudisp.made.navigation.Main2Activity
+import com.sambudisp.made.service.ServiceActivity
 import com.sambudisp.made.tabLayout.Main4Activity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -37,7 +41,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun goCodeLab() {
-        startActivity(Intent(this, MainBgThreadActivity::class.java))
+        startActivity(Intent(this, JobSchedulerActivity::class.java))
         finish()
     }
 

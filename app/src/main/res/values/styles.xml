@@ -51,4 +51,7 @@
         <item name="android:background">@android:color/transparent</item>
     </style>
 
+    <style name="SmsReceiverTheme" parent="Theme.AppCompat.Light.Dialog"/>
+
+
 </resources>
