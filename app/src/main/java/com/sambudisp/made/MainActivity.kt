@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.sambudisp.made.AlarmManager.MainAlarmManagerActivity
 import com.sambudisp.made.BroadcastReceiver.BroadcastReceiverActivity
 import com.sambudisp.made.JobScheduler.JobSchedulerActivity
+import com.sambudisp.made.ViewModel.ViewModelActivity
 import com.sambudisp.made.appbarXnavdrawerXbotnav.Main3Activity
 import com.sambudisp.made.backgroundThread.MainBgThreadActivity
 import com.sambudisp.made.customView.CustomViewActivity
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun goCodeLab() {
-        startActivity(Intent(this, NavigationTaskBackstackActivity::class.java))
+        startActivity(Intent(this, ViewModelActivity::class.java))
         finish()
     }
 

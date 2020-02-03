@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-
+        <activity android:name=".ViewModel.ViewModelActivity"></activity>
         <activity
             android:name=".navigationTaskAndBackstack.DetailNTBackstackActivity"
             android:parentActivityName=".navigationTaskAndBackstack.NavigationTaskBackstackActivity">
@@ -26,8 +26,7 @@
         </activity>
         <activity
             android:name=".navigationTaskAndBackstack.NavigationTaskBackstackActivity"
-            android:launchMode="singleTop"/>
-
+            android:launchMode="singleTop" />
         <activity android:name=".workManager.WorkManagerActivity" />
         <activity android:name=".JobScheduler.JobSchedulerActivity" />
 
