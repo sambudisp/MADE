@@ -1,11 +1,8 @@
-package com.sambudisp.made.BroadcastReceiver
+package com.sambudisp.made.broadcastReceiver
 
-import android.app.Activity
-import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.core.app.ActivityCompat
 import com.sambudisp.made.R
 import kotlinx.android.synthetic.main.activity_sms_receiver.*
 

@@ -1,4 +1,4 @@
-package com.sambudisp.made.ViewModel
+package com.sambudisp.made.viewModel
 
 import android.view.LayoutInflater
 import android.view.View

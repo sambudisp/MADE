@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ViewModel.ViewModelActivity"></activity>
+        <activity android:name=".readWriteFile.ReadWriteFileMainActivity"></activity>
+        <activity android:name=".viewModel.ViewModelActivity" />
         <activity
             android:name=".navigationTaskAndBackstack.DetailNTBackstackActivity"
             android:parentActivityName=".navigationTaskAndBackstack.NavigationTaskBackstackActivity">
@@ -28,20 +29,20 @@
             android:name=".navigationTaskAndBackstack.NavigationTaskBackstackActivity"
             android:launchMode="singleTop" />
         <activity android:name=".workManager.WorkManagerActivity" />
-        <activity android:name=".JobScheduler.JobSchedulerActivity" />
+        <activity android:name=".jobScheduler.JobSchedulerActivity" />
 
         <service
-            android:name=".JobScheduler.GetCurrentWeatherJobService"
+            android:name=".jobScheduler.GetCurrentWeatherJobService"
             android:enabled="true"
             android:exported="true"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <receiver
-            android:name=".AlarmManager.AlarmReceiver"
+            android:name=".alarmManager.AlarmReceiver"
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".AlarmManager.MainAlarmManagerActivity" />
+        <activity android:name=".alarmManager.MainAlarmManagerActivity" />
 
         <service
             android:name="com.DownloadService"
@@ -56,8 +57,8 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".BroadcastReceiver.SmsReceiverActivity" />
-        <activity android:name=".BroadcastReceiver.BroadcastReceiverActivity" />
+        <activity android:name=".broadcastReceiver.SmsReceiverActivity" />
+        <activity android:name=".broadcastReceiver.BroadcastReceiverActivity" />
 
         <service
             android:name="com.MyBoundService"

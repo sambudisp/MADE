@@ -7,7 +7,7 @@ import android.os.Build
 import android.os.Bundle
 import android.telephony.SmsMessage
 import android.util.Log
-import com.sambudisp.made.BroadcastReceiver.SmsReceiverActivity
+import com.sambudisp.made.broadcastReceiver.SmsReceiverActivity
 
 class SmsMyReceiver : BroadcastReceiver() {
 

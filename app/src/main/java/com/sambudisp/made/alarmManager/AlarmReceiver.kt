@@ -1,4 +1,4 @@
-package com.sambudisp.made.AlarmManager
+package com.sambudisp.made.alarmManager
 
 import android.app.AlarmManager
 import android.app.NotificationChannel
@@ -83,7 +83,7 @@ class AlarmReceiver : BroadcastReceiver() {
 
     private fun showAlarmNotification(context: Context, title: String, message: String, notifId: Int) {
         val CHANNEL_ID = "Channel_1"
-        val CHANNEL_NAME = "AlarmManager channel"
+        val CHANNEL_NAME = "alarmManager channel"
         val notificationManagerCompat = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         val alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
         val builder = NotificationCompat.Builder(context, CHANNEL_ID)

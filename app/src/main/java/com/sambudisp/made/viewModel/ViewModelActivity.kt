@@ -1,4 +1,4 @@
-package com.sambudisp.made.ViewModel
+package com.sambudisp.made.viewModel
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

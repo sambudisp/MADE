@@ -1,4 +1,4 @@
-package com.sambudisp.made.AlarmManager
+package com.sambudisp.made.alarmManager
 
 import android.app.Dialog
 import android.app.TimePickerDialog

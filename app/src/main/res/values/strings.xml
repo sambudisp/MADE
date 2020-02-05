@@ -90,4 +90,9 @@
     <string name="detail_title">Hola, Good News</string>
     <string name="detail_message">Now you can learn android in Dicoding</string>
 
+    <string name="file_new">File New</string>
+    <string name="file_open">File Open</string>
+    <string name="file_save">File Save</string>
+    <string name="title">Title</string>
+
 </resources>

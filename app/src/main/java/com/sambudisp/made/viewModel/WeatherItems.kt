@@ -1,4 +1,4 @@
-package com.sambudisp.made.ViewModel
+package com.sambudisp.made.viewModel
 
 class WeatherItems {
     var id: Int = 0

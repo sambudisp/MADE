@@ -1,4 +1,4 @@
-package com.sambudisp.made.JobScheduler
+package com.sambudisp.made.jobScheduler
 
 import android.app.job.JobInfo
 import android.app.job.JobScheduler

@@ -2,9 +2,8 @@ package com
 
 import android.app.IntentService
 import android.content.Intent
-import android.content.Context
 import android.util.Log
-import com.sambudisp.made.BroadcastReceiver.BroadcastReceiverActivity
+import com.sambudisp.made.broadcastReceiver.BroadcastReceiverActivity
 
 class DownloadService : IntentService("DownloadService") {
 

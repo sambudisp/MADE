@@ -1,4 +1,4 @@
-package com.sambudisp.made.BroadcastReceiver
+package com.sambudisp.made.broadcastReceiver
 
 import android.Manifest
 import android.app.Activity
