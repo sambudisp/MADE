@@ -16,7 +16,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".preLoadDataQueryOptimization.MainPreLoadDataActivity"></activity>
+        <service
+            android:name=".preLoadDataQueryOptimization.service.DataManagerService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity android:name=".preLoadDataQueryOptimization.MahasiswaActivity" />
+        <activity android:name=".preLoadDataQueryOptimization.MainPreLoadDataActivity" />
         <activity android:name=".sqliteNoteApp.NoteAddUpdateActivity" />
         <activity android:name=".sqliteNoteApp.MainNoteAppActivity" />
         <activity android:name=".sharedPreferenceSetting.SharedPreferenceSettingMainActivity" />
