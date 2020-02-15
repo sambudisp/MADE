@@ -16,7 +16,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".readWriteFile.ReadWriteFileMainActivity"></activity>
+        <activity android:name=".preLoadDataQueryOptimization.MainPreLoadDataActivity"></activity>
+        <activity android:name=".sqliteNoteApp.NoteAddUpdateActivity" />
+        <activity android:name=".sqliteNoteApp.MainNoteAppActivity" />
+        <activity android:name=".sharedPreferenceSetting.SharedPreferenceSettingMainActivity" />
+        <activity android:name=".sharedPreference.FormUserPreferenceActivity" />
+        <activity android:name=".sharedPreference.SharedPreferenceMainActivity" />
+        <activity android:name=".readWriteFile.ReadWriteFileMainActivity" />
         <activity android:name=".viewModel.ViewModelActivity" />
         <activity
             android:name=".navigationTaskAndBackstack.DetailNTBackstackActivity"

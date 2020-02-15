@@ -7,8 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.sambudisp.made.readWriteFile.ReadWriteFileMainActivity
-import com.sambudisp.made.viewModel.ViewModelActivity
+import com.sambudisp.made.preLoadDataQueryOptimization.MainPreLoadDataActivity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -33,7 +32,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun goCodeLab() {
-        startActivity(Intent(this, ReadWriteFileMainActivity::class.java))
+        startActivity(Intent(this, MainPreLoadDataActivity::class.java))
         finish()
     }
 
