@@ -165,7 +165,7 @@ class DataManagerService : Service(), CoroutineScope {
         var line: String?
         val reader: BufferedReader
         try {
-            val rawText = resources.openRawResource(com.sambudisp.made.R.raw.data_mahasiswa)
+            val rawText = resources.openRawResource(R.raw.data_mahasiswa)
             reader = BufferedReader(InputStreamReader(rawText))
             do {
                 line = reader.readLine()
