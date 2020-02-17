@@ -1,12 +1,16 @@
 package com.sambudisp.made.sqliteNoteApp
 
 import android.content.Intent
+import android.database.ContentObserver
 import android.os.Bundle
+import android.os.Handler
+import android.os.HandlerThread
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.sambudisp.made.R
+import com.sambudisp.made.sqliteNoteApp.DatabaseContract.NoteColumns.Companion.CONTENT_URI
 import com.sambudisp.made.sqliteNoteApp.adapter.NoteAdapter
 import com.sambudisp.made.sqliteNoteApp.helper.MappingHelper
 import kotlinx.android.synthetic.main.activity_main_note_app.*
@@ -38,8 +42,19 @@ class MainNoteAppActivity : AppCompatActivity() {
             startActivityForResult(intent, NoteAddUpdateActivity.REQUEST_ADD)
         }
 
-        noteHelper = NoteHelper.getInstance(applicationContext)
-        noteHelper.open()
+        val handlerThread = HandlerThread("DataObserver")
+        handlerThread.start()
+        val handler = Handler(handlerThread.looper)
+        val myObserver = object : ContentObserver(handler) {
+            override fun onChange(self: Boolean) {
+                loadNotesAsync()
+            }
+        }
+
+        contentResolver.registerContentObserver(CONTENT_URI, true, myObserver)
+
+        /*noteHelper = NoteHelper.getInstance(applicationContext)
+        noteHelper.open()*/
 
         // proses ambil data
         loadNotesAsync()
@@ -63,8 +78,8 @@ class MainNoteAppActivity : AppCompatActivity() {
         GlobalScope.launch(Dispatchers.Main) {
             progressbar.visibility = View.VISIBLE
             val deferredNotes = async(Dispatchers.IO) {
-                val cursor = noteHelper.queryAll()
-                MappingHelper().mapCursorToArrayList(cursor)
+                val cursor = contentResolver?.query(CONTENT_URI, null, null, null, null)
+                MappingHelper.mapCursorToArrayList(cursor)
             }
             progressbar.visibility = View.INVISIBLE
             val notes = deferredNotes.await()
@@ -73,41 +88,6 @@ class MainNoteAppActivity : AppCompatActivity() {
             } else {
                 adapter.listNotes = ArrayList()
                 showSnackbarMessage("Tidak ada data saat ini")
-            }
-        }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        noteHelper.close()
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (data != null) {
-            when (requestCode) {
-                NoteAddUpdateActivity.REQUEST_ADD -> if (resultCode == NoteAddUpdateActivity.RESULT_ADD) {
-                    val note = data.getParcelableExtra<Note>(NoteAddUpdateActivity.EXTRA_NOTE)
-                    adapter.addItem(note)
-                    rv_notes.smoothScrollToPosition(adapter.itemCount - 1)
-                    showSnackbarMessage("Satu item berhasil ditambahkan")
-                }
-                NoteAddUpdateActivity.REQUEST_UPDATE ->
-                    when (resultCode) {
-                        NoteAddUpdateActivity.RESULT_UPDATE -> {
-                            val note =
-                                data.getParcelableExtra<Note>(NoteAddUpdateActivity.EXTRA_NOTE)
-                            val position = data.getIntExtra(NoteAddUpdateActivity.EXTRA_POSITION, 0)
-                            adapter.updateItem(position, note)
-                            rv_notes.smoothScrollToPosition(position)
-                            showSnackbarMessage("Satu item berhasil diubah")
-                        }
-                        NoteAddUpdateActivity.RESULT_DELETE -> {
-                            val position = data.getIntExtra(NoteAddUpdateActivity.EXTRA_POSITION, 0)
-                            adapter.removeItem(position)
-                            showSnackbarMessage("Satu item berhasil dihapus")
-                        }
-                    }
             }
         }
     }
