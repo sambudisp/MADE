@@ -117,5 +117,9 @@
     <string name="key_phone">phone</string>
     <string name="key_love">love</string>
     <string name="key_name">name</string>
+    <string name="add_widget">Add widget</string>
+    <string name="appwidget_text">Ini Widget</string>
+
+
 
 </resources>

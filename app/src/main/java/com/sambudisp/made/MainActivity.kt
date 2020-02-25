@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.sambudisp.made.preLoadDataQueryOptimization.MainPreLoadDataActivity
+import com.sambudisp.made.widgets.MainWidgetActivity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun goCodeLab() {
-        startActivity(Intent(this, MainPreLoadDataActivity::class.java))
+        startActivity(Intent(this, MainWidgetActivity::class.java))
         finish()
     }
 
