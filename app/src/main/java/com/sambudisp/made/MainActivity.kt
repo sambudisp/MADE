@@ -7,8 +7,14 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.sambudisp.made.preLoadDataQueryOptimization.MainPreLoadDataActivity
-import com.sambudisp.made.widgets.MainWidgetActivity
+import com.sambudisp.made.Sound.SoundMainActivity
+import com.sambudisp.made.Webview.WebviewMainActivity
+import com.sambudisp.made.firebaseCloudMessaging.FirebaseCloudMessagingMainActivity
+import com.sambudisp.made.mediaPlayer.MediaPlayerMainActivity
+import com.sambudisp.made.pushNotifCustom.PushNotifCustomActivity
+import com.sambudisp.made.pushNotifStack.PushNotifStackMainActivity
+import com.sambudisp.made.pushNotification.PushNotifActivity
+import com.sambudisp.made.widgetsStackView.WidgetStackViewMainActivity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -33,7 +39,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun goCodeLab() {
-        startActivity(Intent(this, MainWidgetActivity::class.java))
+        startActivity(Intent(this, MediaPlayerMainActivity::class.java))
         finish()
     }
 

@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
 
     <application
         android:allowBackup="true"
@@ -16,6 +18,63 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <service
+            android:name=".mediaPlayer.MediaService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity android:name=".mediaPlayer.MediaPlayerMainActivity" />
+        <activity android:name=".Sound.SoundMainActivity" />
+        <activity android:name=".Webview.WebviewMainActivity" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/ic_launcher" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+
+        <service android:name=".firebaseCloudMessaging.FCMService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".firebaseCloudMessaging.FirebaseCloudMessagingMainActivity" />
+        <activity android:name=".pushNotifStack.PushNotifStackMainActivity" />
+
+        <receiver
+            android:name=".pushNotifCustom.NotificationBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name=".pushNotifCustom.NotificationService"
+            android:exported="false" />
+
+        <activity android:name=".pushNotifCustom.ReplyActivity" />
+        <activity android:name=".pushNotifCustom.PushNotifCustomActivity" />
+        <activity android:name=".pushNotification.PushNotifActivity" />
+
+        <receiver android:name=".widgetsStackView.ImagesBannerWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/images_banner_widget_info" />
+        </receiver>
+
+        <activity android:name=".widgetsStackView.WidgetStackViewMainActivity" />
+
+        <service
+            android:name=".widgetsStackView.StackWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
         <receiver android:name=".widgets.RadomNumberWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -25,6 +84,12 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/radom_number_widget_info" />
         </receiver>
+
+        <service
+            android:name=".widgets.UpdateWidgetService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <activity android:name=".widgets.MainWidgetActivity" />
 
